@@ -2,8 +2,7 @@
 
 This repo contains the Dockerfile that is used for automated builds.
 
-This Dockerfile was created using instructions at https://docs.signalsciences.net/install-guides/ubuntu/agent/
-
+This Dockerfile was created using instructions at https://docs.signalsciences.net/install-guides/agent-installation/ubuntu-agent/
 To run:
 
 ```
@@ -13,7 +12,7 @@ docker run \
     -e SIGSCI_HOSTNAME=<...> \
     -e SIGSCI_RPC_ADDRESS=unix:/var/run/sigsci/sigsci.sock \
     -v /var/run/sigsci:/var/run/sigsci \
-    marc/sigsci-agent
+    files/sigsci-agent
 ```
 
 ## Module Initialization
@@ -26,5 +25,5 @@ All configuration items on https://docs.signalsciences.net/install-guides/agent-
 Alternatively, if you'd prefer to use an agent.conf file to manage config, can you create that and mount it into the container:
 
 ```
-docker run -v `path-to-agent.conf`/etc/sigsci/agent.conf marc/sigsci-agent
+docker run -v `path-to-agent.conf`/etc/sigsci/agent.conf files/sigsci-agent
 ```
